@@ -1,5 +1,5 @@
 const RESULTS_PER_PAGE = 50;
-const EXPECTED_MIN = 81;
+const EXPECTED_MIN = 71;
 const EXPECTED_MAX = 86;
 const BATCH_SIZE = 10;
 const MIN_LOADING_TIME = 1000;
