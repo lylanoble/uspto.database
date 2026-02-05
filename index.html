@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Trademark Upgrades</title>
+  <link rel="icon" href="https://customer-assets.emergentagent.com/job_mytmbrand-dev/artifacts/rej4wurf_fav-icon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+  <!-- Hero Section -->
+  <div class="relative flex flex-col items-center justify-center w-full px-5 md:px-10 py-20">
+
+    <!-- Hero Heading -->
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-center leading-snug max-w-3xl mb-6">
+      Search over 
+      <span class="bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-orange-500 to-amber-600 relative whitespace-nowrap">
+        20 million+
+      </span> Trademarks for free
+    </h1>
+
+    <p class="text-center text-slate-600 sm:text-lg mb-10 max-w-xl">
+      World's most trusted name in Trademark Registration. 
+      <br>Trademark filing starts at $45 only. File Today !
+    </p>
+
+    <!-- Search Bar -->
+    <div class="w-full max-w-3xl flex items-center gap-3 relative">
+      
+      <!-- Input Container with Icon -->
+      <div class="relative flex-1">
+        <!-- Icon -->
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+
+        <!-- Input -->
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search trademark here"
+          class="w-full pl-12 pr-6 py-4 rounded-2xl border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-600 text-lg"
+        />
+      </div>
+
+      <!-- Search Button -->
+      <button
+        id="searchBtn"
+        class="px-16 py-4 rounded-2xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-semibold hover:bg-blue-700 transition text-lg flex items-center justify-center"
+      >
+        Search
+      </button>
+    </div>
+
+    <div id="status" class="mt-4 text-sm text-slate-500"></div>
+  </div>
+
+
+  <!-- Results Grid -->
+  <div class="max-w-6xl mx-auto px-5 md:px-10 mb-20">
+    <div id="results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    <div class="text-center mt-8">
+      <button id="loadMoreBtn" class="hidden px-6 py-3 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white rounded-xl hover:bg-blue-700 transition">
+        Load more
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
