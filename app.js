@@ -112,8 +112,7 @@ async function init() {
 }
 
 /**
- * THE STREAMING SEARCH ENGINE
- * Shows first 50 results immediately, continues scanning in background
+ * THE TARGETED SEARCH ENGINE
  */
 async function executeSearch() {
     if (isSearching || !RANGE_MAP) return;
@@ -124,7 +123,6 @@ async function executeSearch() {
         return;
     }
 
-    // Reset State
     isSearching = true;
     collectedResults = [];
     page = 0;
@@ -133,59 +131,57 @@ async function executeSearch() {
     loadMoreBtn.classList.add("hidden");
     
     showSkeletonCards(BATCH_SIZE);
-    statusEl.textContent = "Locating data...";
+    statusEl.textContent = "Locating data chunks...";
 
+    const startTime = performance.now();
+
+    // 1. Find only the chunks that alphabetically contain our query
     const targetChunks = RANGE_MAP.filter(chunk => {
         const q = query.toLowerCase();
         const start = chunk.start.toLowerCase();
         const end = chunk.end.toLowerCase();
+
+        // Check if query is within range OR if the chunk starts with the query
         return (q >= start.substring(0, q.length) && q <= end) || start.startsWith(q);
     });
 
     if (targetChunks.length === 0) {
-        statusEl.textContent = "No results found.";
+        statusEl.textContent = "No results found in the database.";
         isSearching = false;
         resultsEl.innerHTML = "";
         return;
     }
 
-    // --- STREAMING LOGIC START ---
-    let firstBatchShown = false;
-
+    // 2. Load only the necessary chunks
     for (const target of targetChunks) {
+        statusEl.textContent = `Searching ${target.file}...`;
         const data = await loadChunk(target.file);
         if (!data) continue;
 
         for (const row of data) {
             const mark = row.mk?.toLowerCase();
-            if (mark && (mark.startsWith(query) || mark.includes(query))) {
-                collectedResults.push({ 
-                    score: mark.startsWith(query) ? 2 : 1, 
-                    row 
-                });
+            if (!mark) continue;
+
+            if (mark.startsWith(query)) {
+                collectedResults.push({ score: 2, row });
+            } else if (mark.includes(query)) {
+                collectedResults.push({ score: 1, row });
             }
         }
-
-        // If we found enough for the first page, show them NOW
-        if (!firstBatchShown && collectedResults.length >= RESULTS_PER_PAGE) {
-            resultsEl.innerHTML = ""; // Clear skeletons
-            await revealMoreResults(); // Show first 50
-            firstBatchShown = true;
-        }
-        
-        statusEl.textContent = `Found ${collectedResults.length} matches...`;
     }
 
-    // If the loop finished and we never showed anything (e.g., less than 50 total matches)
-    if (!firstBatchShown) {
-        resultsEl.innerHTML = "";
-        collectedResults.sort((a, b) => b.score - a.score);
-        await revealMoreResults();
-    }
+    // 3. Sort by relevance
+    collectedResults.sort((a, b) => b.score - a.score);
 
+    // 4. Smooth UX Transition
+    const elapsed = performance.now() - startTime;
+    await new Promise(r => setTimeout(r, Math.max(0, MIN_LOADING_TIME - elapsed)));
+
+    // 5. Reveal Phase
+    resultsEl.innerHTML = "";
+    await revealMoreResults();
+    
     isSearching = false;
-    updateStatus();
-    // --- STREAMING LOGIC END ---
 }
 
 /**
