@@ -26,22 +26,13 @@
     </p>
 
     <!-- Search Bar -->
-    <div class="flex flex-col gap-4 md:flex-row md:items-center">
+    <div class="w-full max-w-3xl flex flex-col gap-4 md:flex-row md:items-center items-center relative">
+      
+      <!-- Input Container with Icon -->
       <div class="relative flex-1">
         <!-- Icon -->
-        <svg
-          class="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-          />
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
 
         <!-- Input -->
@@ -53,12 +44,14 @@
         />
       </div>
 
-      <!-- Example button -->
-      <button class="w-full md:w-auto px-6 py-4 rounded-2xl bg-orange-600 text-white">
+      <!-- Search Button -->
+      <button
+        id="searchBtn"
+        class="px-16 py-4 rounded-2xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-semibold hover:bg-blue-700 transition text-lg flex items-center justify-center"
+      >
         Search
       </button>
     </div>
-
 
     <div id="status" class="mt-4 text-sm text-slate-500"></div>
   </div>
