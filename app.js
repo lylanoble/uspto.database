@@ -1,4 +1,4 @@
-const RESULTS_PER_PAGE = 50;
+const RESULTS_PER_PAGE = 100;
 const BATCH_SIZE = 10;
 const MIN_LOADING_TIME = 800;
 const MAX_CACHE_SIZE = 20;
