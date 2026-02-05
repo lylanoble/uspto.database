@@ -257,7 +257,7 @@ function renderCard(r, delay) {
     const filedDate = r.fd ? `${r.fd.slice(6,8)}-${r.fd.slice(4,6)}-${r.fd.slice(0,4)}` : "—";
 
     card.innerHTML = `
-            <div class="flex justify-center items-center h-48 mb-4 overflow-hidden rounded-xl bg-slate-50">
+            <div class="flex justify-center items-center h-48 mb-4 overflow-hidden rounded-xl">
             <img 
                 src="https://tmcms-docs.uspto.gov/cases/${r.sn}/mark/large.png"
                 class="object-contain h-full w-full"
@@ -271,7 +271,7 @@ function renderCard(r, delay) {
             <p class="text-xs text-slate-500 mb-3 truncate">
                 Serial No # 
                 <a href="https://tsdr.uspto.gov/#caseNumber=${r.sn}&caseType=SERIAL_NO&searchType=statusSearch" 
-                   target="_blank" class="inline-flex items-center gap-1 font-bold hover:text-blue-500 transition-colors">
+                   target="_blank" class="inline-flex items-center gap-1 font-bold hover:text-orange-700 transition-colors">
                     <span>${r.sn || "—"}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
