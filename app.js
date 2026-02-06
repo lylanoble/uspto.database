@@ -24,16 +24,6 @@ if (menu.classList.contains("hidden")) {
 
 
 
-
-
-
-
-
-
-
-
-
-
 const RESULTS_PER_PAGE = 100;
 const BATCH_SIZE = 10;
 const MIN_LOADING_TIME = 800;
@@ -167,7 +157,7 @@ async function executeSearch() {
     loadMoreBtn.classList.add("hidden");
     
     showSkeletonCards(BATCH_SIZE);
-    statusEl.textContent = "Locating data chunks...";
+    statusEl.textContent = "Checking database . . . ";
 
     const startTime = performance.now();
 
@@ -190,7 +180,7 @@ async function executeSearch() {
 
     // 2. Load only the necessary chunks
     for (const target of targetChunks) {
-        statusEl.textContent = `Searching ${target.file}...`;
+        statusEl.textContent = `Searching . . . `;
         const data = await loadChunk(target.file);
         if (!data) continue;
 
