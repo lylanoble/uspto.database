@@ -281,8 +281,9 @@ function renderCard(r, delay) {
             <p class="text-sm text-slate-700 line-clamp-3 mb-3">${r.as || "—"}</p>
             <div class="mt-auto pt-3 border-t border-slate-100">
                 <div class="flex items-center justify-between text-xs text-slate-500">
+                    <span>
                     <img src="https://lylanoble.github.io/trademarkupgrades-database/svgs/${r.pc || "—"}.svg">
-                    <span>Class <strong>${r.pc || "—"}</strong></span>
+                    Class <strong>${r.pc || "—"}</strong></span>
                     <span>Filed on <strong>${filedDate}</strong></span>
                 </div>
             </div>
