@@ -284,7 +284,7 @@ function renderCard(r, delay) {
                     <span class="flex items-center gap-1">
                     <img
                         src="https://lylanoble.github.io/trademarkupgrades-database/svgs/${r.pc || "—"}.svg"
-                        class="h-4 w-4"
+                        class="h-5 w-5"
                         alt=""
                     >
                     Class <strong>${r.pc || "—"}</strong>
