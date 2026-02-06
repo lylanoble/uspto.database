@@ -1,3 +1,39 @@
+
+const menuBtn = document.getElementById("m-menu-btn");
+const menu = document.getElementById("m-menu");
+const menuIcon = menuBtn.querySelector("img");
+
+menuBtn.addEventListener("click", () => {
+menu.classList.toggle("hidden");
+
+if (menu.classList.contains("hidden")) {
+    menuIcon.src = "svgs/menu.svg";
+} else {
+    menuIcon.src = "svgs/cross.svg";
+}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const RESULTS_PER_PAGE = 100;
 const BATCH_SIZE = 10;
 const MIN_LOADING_TIME = 800;
@@ -284,7 +320,7 @@ function renderCard(r, delay) {
                     <span class="flex items-center gap-1">
                     <img
                         src="https://lylanoble.github.io/trademarkupgrades-database/svgs/${r.pc || "—"}.svg"
-                        class="h-5 w-5"
+                        class="h-6 w-6"
                         alt=""
                     >
                     Class <strong>${r.pc || "—"}</strong>

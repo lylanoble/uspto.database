@@ -78,10 +78,33 @@
   
   <div class="hidden lg:flex items-center gap-3">
   <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow h-9 px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white">Get Started</button>
-  <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border shadow-sm hover:text-accent-foreground h-9 px-4 py-2 border-orange-600 text-orange-600 hover:bg-orange-50"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle mr-2 h-4 w-4" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>Chat Now</button>
+  <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border shadow-sm hover:text-accent-foreground h-9 px-4 py-2 border-orange-600 text-orange-600 hover:bg-orange-50">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle mr-2 h-4 w-4" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>Chat Now</button>
   </div>
-  <button class="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-6 w-6" aria-hidden="true"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg></button>
+
+  <button class="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100" id="m-menu-btn">
+  <img src="svgs/menu.svg" class="h-6 w-6" alt="">
+  </button>
   </div>
+
+  <div class="hidden lg:hidden py-4 border-t border-gray-200" id="m-menu">
+  <div class="flex flex-col space-y-2"><a class="px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-md" href="/" data-discover="true">Home</a>
+  <a class="px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-md" href="/about" data-discover="true">About Us</a>
+  <a class="px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-md" href="/services" data-discover="true">Services</a>
+  <a class="pl-8 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-md" href="/services/trademark-registration" data-discover="true">Trademark Registration</a>
+  <a class="pl-8 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-md" href="/services/copyright-registration" data-discover="true">Copyright Registration</a>
+  <a class="pl-8 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-md" href="/services/company-formation" data-discover="true">Company Formation</a>
+  <a class="pl-8 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-md" href="/services/trademark-search" data-discover="true">Trademark Search</a>
+  <a class="pl-8 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-md" href="/services/amazon-brand-registry" data-discover="true">Amazon Brand Registry</a>
+  <a class="px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-md" href="/contact" data-discover="true">Contact Us</a>
+  
+  <div class="px-4 pt-2 space-y-2">
+  <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow h-9 px-4 py-2 w-full bg-orange-600 hover:bg-orange-700 text-white">Get Started</button>
+  <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border shadow-sm hover:text-accent-foreground h-9 px-4 py-2 w-full border-orange-600 text-orange-600 hover:bg-orange-50"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle mr-2 h-4 w-4" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>Chat Now</button>
+  </div>
+  </div>
+  </div>
+
   </div>
 
   </header>
